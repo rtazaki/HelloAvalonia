@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Media;
 using Avalonia.ReactiveUI;
 using System;
 
@@ -17,8 +18,18 @@ namespace HelloAvalonia
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .WithInterFont()
                 .LogToTrace()
-                .UseReactiveUI();
+                .UseReactiveUI()
+                .With(new FontManagerOptions
+                {
+                    DefaultFamilyName = "avares://HelloAvalonia/Assets/HackGen-Regular.ttf#HackGen",
+                    FontFallbacks = new[]
+                    {
+                        new FontFallback
+                        {
+                            FontFamily = new FontFamily("avares://HelloAvalonia/Assets/HackGen-Regular.ttf#HackGen")
+                        }
+                    }
+                });
     }
 }
