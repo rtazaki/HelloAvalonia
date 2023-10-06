@@ -6,29 +6,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:HelloAvalonia.ViewModels"
     Title="HelloAvalonia"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
     x:DataType="vm:MainWindowViewModel"
     Icon="/Assets/avalonia-logo.ico"
+    WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
 
     <Design.DataContext>
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <DockPanel>
-        <DockPanel DockPanel.Dock="Top">
-            <ComboBox
-                DockPanel.Dock="Top"
-                ItemsSource="{Binding PageNames}"
-                SelectedIndex="{Binding PageIndex}">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" />
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+    <ScrollViewer>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <ComboBox
+                    DockPanel.Dock="Top"
+                    ItemsSource="{Binding PageNames}"
+                    SelectedIndex="{Binding PageIndex}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <TransitioningContentControl Content="{Binding CurrentPage}" DockPanel.Dock="Top" />
         </DockPanel>
-        <TransitioningContentControl Content="{Binding CurrentPage}" DockPanel.Dock="Top" />
-    </DockPanel>
+    </ScrollViewer>
 </Window>
