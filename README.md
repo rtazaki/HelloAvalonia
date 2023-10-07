@@ -20,8 +20,17 @@
 
 ## フォント埋め込み
 
+- 本ソフトウェアは、デフォルトフォントとして[HackGen](https://github.com/yuru7/HackGen)を使用することにした。
+  - Copyright (c) 2019, Yuko OTAWARA. with Reserved Font Name "白源", "HackGen"
+  - SIL OPEN FONT LICENSE Version 1.1
 - Raspberry Pi OS ではデフォルトフォントが見つからない。(Default font family name can't be null or empty.)
 - [得られた回答](https://github.com/AvaloniaUI/Avalonia/issues/11084)を参考に、Program.cs 側で、フォントマネージャーに対してデフォルトフォントを埋め込み。
+- フォントフォールバックの設定は、無くても動くかもしれない。
+
+### UDEV Gothic 使ってみたかったがダメだった。
+
+- DefaultFamilyName = "avares://HelloAvalonia/Assets/UDEVGothic-Regular.ttf#UDEVGothic",
+  - `System.InvalidOperationException: 'Could not create glyphTypeface.'`
 
 ## 単独実行アプリの作成
 
@@ -68,3 +77,9 @@
 - これによって、オープンダイアログから、テキストボックスに何かを表示した際に
 - 見切れずオートスクロールするようになった。
 - 最善はサイズ超過しそうなコントロールにのみ限定して張るべき?
+
+### その他設定
+
+- RequestedThemeVariant を Default→Light に統一。(開発環境ではダーク、配布先ではライトだと困るため。)
+- FluentTheme→SimpleTheme に変更したほうが、チープな環境で軽快動作させられる?
+- FontSize="18"を MainWindow に設定して、うまく適用できた模様。

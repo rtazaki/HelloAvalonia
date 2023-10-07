@@ -7,6 +7,7 @@
     xmlns:vm="using:HelloAvalonia.ViewModels"
     Title="HelloAvalonia"
     x:DataType="vm:MainWindowViewModel"
+    FontSize="18"
     Icon="/Assets/avalonia-logo.ico"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
