@@ -15,10 +15,12 @@
 
     <DockPanel>
         <Button
-            Command="{Binding FileOpenDialogCommand}"
+            Command="{Binding OpenFileDialogCommand}"
             CommandParameter="{Binding $parent[Window]}"
             Content="ファイルを開く(_F)"
             DockPanel.Dock="Top" />
-        <TextBlock Text="{Binding FileString}" />
+        <ScrollViewer>
+            <TextBlock Text="{Binding FileString}" />
+        </ScrollViewer>
     </DockPanel>
 </UserControl>

@@ -83,3 +83,27 @@
 - RequestedThemeVariant を Default→Light に統一。(開発環境ではダーク、配布先ではライトだと困るため。)
 - FluentTheme→SimpleTheme に変更したほうが、チープな環境で軽快動作させられる?
 - FontSize="18"を MainWindow に設定して、うまく適用できた模様。
+
+### 使ってみたいプリセットコントロール(Windows 版 WPF とは異なる実現方法)
+
+- [Built-in Controls](https://docs.avaloniaui.net/docs/next/reference/controls/)
+
+| 名前                           | 内容                                    |
+| :----------------------------- | :-------------------------------------- |
+| AutoCompleteBox                | 入力補完付きテキストボックス            |
+| MaskedTextBox                  | 書式付きテキストボックス                |
+| ContextMenu                    | 例:テキストボックスに Copy/Paste を付与 |
+| ToolTip                        | コントロールの説明(ツールチップ)        |
+| ButtonSpinner                  | スピナー付きボタン                      |
+| NumericUpDown                  | 数字増減                                |
+| RepeatButton                   | 繰り返し付きリピートボタン              |
+| SplitButton                    | サブメニュー付きボタン                  |
+| ToggleButton                   | トグルボタン                            |
+| ToggleSplitButton              | トグルボタンと Split を合わせたもの     |
+| DataGrid                       | データグリッド(要 NuGet)                |
+| TreeDataGrid                   | ツリー+データグリッド(要 NuGet)         |
+| HierarchicalTreeDataGridSource | 階層グリッド                            |
+| CalendarDatePicker             | カレンダー日付取得用                    |
+| TimePicker                     | 時間取得用                              |
+| TransitioningContentControl    | Frame みたいなもの。画面遷移に使う。    |
+| TrayIcon                       | タスクバー常駐アプリとかで使う?         |

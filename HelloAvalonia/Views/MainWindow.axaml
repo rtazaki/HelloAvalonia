@@ -16,21 +16,19 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <ScrollViewer>
-        <DockPanel>
-            <DockPanel DockPanel.Dock="Top">
-                <ComboBox
-                    DockPanel.Dock="Top"
-                    ItemsSource="{Binding PageNames}"
-                    SelectedIndex="{Binding PageIndex}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" />
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </DockPanel>
-            <TransitioningContentControl Content="{Binding CurrentPage}" DockPanel.Dock="Top" />
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <ComboBox
+                DockPanel.Dock="Top"
+                ItemsSource="{Binding PageNames}"
+                SelectedIndex="{Binding PageIndex}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </DockPanel>
-    </ScrollViewer>
+        <TransitioningContentControl Content="{Binding CurrentPage}" DockPanel.Dock="Top" />
+    </DockPanel>
 </Window>

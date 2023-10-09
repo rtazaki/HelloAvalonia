@@ -13,19 +13,12 @@
         <vm:_2PageViewModel />
     </Design.DataContext>
 
-    <StackPanel VerticalAlignment="Center" Spacing="5">
-        <TextBlock
-            VerticalAlignment="Center"
-            FontSize="16"
-            FontWeight="SemiBold"
-            Text="{Binding Title}"
-            TextAlignment="Center"
-            TextWrapping="Wrap" />
-        <TextBlock
-            VerticalAlignment="Center"
-            FontSize="16"
-            Text="{Binding Message}"
-            TextAlignment="Center"
-            TextWrapping="Wrap" />
-    </StackPanel>
+    <DockPanel>
+        <Button
+            Command="{Binding OpenFolderDialogCommand}"
+            CommandParameter="{Binding $parent[Window]}"
+            Content="フォルダを開く(_F)"
+            DockPanel.Dock="Top" />
+        <TextBlock Text="{Binding FolderString}" />
+    </DockPanel>
 </UserControl>

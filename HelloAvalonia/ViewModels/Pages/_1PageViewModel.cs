@@ -9,7 +9,7 @@ namespace HelloAvalonia.ViewModels
 {
     public class _1PageViewModel : ViewModelBase
     {
-        public ICommand FileOpenDialogCommand { get; }
+        public ICommand OpenFileDialogCommand { get; }
         private string _fileString = string.Empty;
         public string FileString
         {
@@ -19,8 +19,9 @@ namespace HelloAvalonia.ViewModels
 
         public _1PageViewModel()
         {
-            FileOpenDialogCommand = ReactiveCommand.Create<Window>(async (window) =>
+            OpenFileDialogCommand = ReactiveCommand.Create<Window>(async (window) =>
             {
+                FileString = string.Empty;
                 var files = await window.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
                 {
                     Title = "ファイルを開く",
@@ -32,7 +33,7 @@ namespace HelloAvalonia.ViewModels
                         },
                     },
                     AllowMultiple = false,
-                }); ;
+                });
 
                 if (files.Count >= 1)
                 {
