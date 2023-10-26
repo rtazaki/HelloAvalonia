@@ -27,10 +27,15 @@
 - [得られた回答](https://github.com/AvaloniaUI/Avalonia/issues/11084)を参考に、Program.cs 側で、フォントマネージャーに対してデフォルトフォントを埋め込み。
 - フォントフォールバックの設定は、無くても動くかもしれない。
 
-### UDEV Gothic 使ってみたかったがダメだった。
+### そのほかのフォントでも成功。
 
 - DefaultFamilyName = "avares://HelloAvalonia/Assets/UDEVGothic-Regular.ttf#UDEVGothic",
   - `System.InvalidOperationException: 'Could not create glyphTypeface.'`
+- ↑#以降の名前を、フォントをダブルクリックしたときに表示されるフォント名にしていなかったせい。(スペースが重要)
+
+- BIZUDPGothic-Regular.ttf#BIZ UDPGothic
+- NotoSansJP-Regular.ttf#Noto Sans JP
+- UDEVGothic-Regular.ttf#UDEV Gothic
 
 ## 単独実行アプリの作成
 

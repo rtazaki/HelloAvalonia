@@ -22,12 +22,18 @@ namespace HelloAvalonia
                 .UseReactiveUI()
                 .With(new FontManagerOptions
                 {
+                    //DefaultFamilyName = "avares://HelloAvalonia/Assets/BIZUDPGothic-Regular.ttf#BIZ UDPGothic",
                     DefaultFamilyName = "avares://HelloAvalonia/Assets/HackGen-Regular.ttf#HackGen",
+                    //DefaultFamilyName = "avares://HelloAvalonia/Assets/NotoSansJP-Regular.ttf#Noto Sans JP",
+                    //DefaultFamilyName = "avares://HelloAvalonia/Assets/UDEVGothic-Regular.ttf#UDEV Gothic",
                     FontFallbacks = new[]
                     {
                         new FontFallback
                         {
+                            //FontFamily = new FontFamily("avares://HelloAvalonia/Assets/BIZUDPGothic-Regular.ttf#BIZ UDPGothic")
                             FontFamily = new FontFamily("avares://HelloAvalonia/Assets/HackGen-Regular.ttf#HackGen")
+                            //FontFamily = new FontFamily("avares://HelloAvalonia/Assets/NotoSansJP-Regular.ttf#Noto Sans JP")
+                            //FontFamily = new FontFamily("avares://HelloAvalonia/Assets/UDEVGothic-Regular.ttf#UDEV Gothic")
                         }
                     }
                 });
